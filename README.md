@@ -1,2 +1,2 @@
-# nobara-kde-splashscreen
-Simple splashscreen for Glorious Eggroll's Nobara Linux
+# Splashscreen for Nobara KDE
+A simple splashscreen for Glorious Eggroll's Nobara Linux
