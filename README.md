@@ -8,3 +8,8 @@
 A simple splashscreen for [Nobara Linux](https://nobaraproject.org/).
 
 </div>
+<br/>
+<br/>
+
+## To Install:
+TBA
