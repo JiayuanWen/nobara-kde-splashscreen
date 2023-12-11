@@ -1,2 +1,2 @@
 # Splashscreen for Nobara KDE
-A simple splashscreen for Glorious Eggroll's Nobara Linux
+A simple splashscreen for [Nobara Linux](https://nobaraproject.org/).
