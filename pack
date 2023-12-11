@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Check if tar utility exist on system
+if command -v tar &> /dev/null; then
+    echo -e "Start packing... \n"
+else
+    echo "tar utility is not installed. Skip packing."
+    exit 1
+fi
+
+# Create temp Folder
+mkdir -v ${PWD}/Nobara-SplashScreen
+
+# Copy splashscreen content to temp folder
+cp -rp "${PWD}/Nobara.SplashScreen" ${PWD}/Nobara-SplashScreen
+cp -vp ${PWD}/install ${PWD}/Nobara-SplashScreen
+
+# Archive the folder
+tar -cvf Nobara-Splashscreen.tar Nobara-SplashScreen &&
+
+# Delete temp Folder
+rm -rf "${PWD}/Nobara-SplashScreen/"
+echo -e "\nPacking complete!"
+exit 0

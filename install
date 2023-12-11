@@ -43,5 +43,6 @@ SPLASH_FOLDER="${PWD}/Nobara.SplashScreen/"
 echo "${PWD}/Nobara\.SplashScreen/"
 cp -rv "$SPLASH_FOLDER" "$FOLDER_PATH"
 
+
 echo -e "\nSplashscreen install successful"
 exit 0
