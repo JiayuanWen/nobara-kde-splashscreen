@@ -5,8 +5,8 @@
 
 <div align="center">
   
-A simple splashscreen for [Nobara Linux KDE](https://nobaraproject.org/). Nothing fancy, just something to make Nobara Linux feel more official. Feel free to fork to make something fancier. 
-
+A simple splashscreen for [Nobara Linux KDE](https://nobaraproject.org/). Nothing fancy, just something to make Nobara Linux feel more official. Feel free to fork to make something fancier. <br/>
+<sub>Note: This splashscreen is not uploaded to KDE Store, thus it cannot be found via settings </sub> 
 </div>
 <br/>
 <br/>
@@ -33,10 +33,10 @@ If `./install` give permission error, give execute permission:
 sudo sh -c 'chmod +x ./install && ./install'
 ```
 \
-Alternatively, you can copy the splash screen manually:
+Alternatively, you can copy the splashscreen manually:
 ```
 cp -rv ./Nobara.SplashScreen ~/.local/share/plasma/look-and-feel/
 ```
 
 ## Credits:
-Forked from Breeze splash screen by KDE Visual Design Group.
+Forked from Breeze splashscreen by KDE Visual Design Group.
