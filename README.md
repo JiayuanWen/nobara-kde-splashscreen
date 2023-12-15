@@ -5,7 +5,7 @@
 
 <div align="center">
   
-A simple splashscreen for [Nobara Linux](https://nobaraproject.org/).
+A simple splashscreen for [Nobara Linux KDE](https://nobaraproject.org/). Nothing fancy, just something to make Nobara Linux feel more official. Feel free to fork to make something fancier. 
 
 </div>
 <br/>
