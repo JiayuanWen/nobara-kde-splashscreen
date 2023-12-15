@@ -12,7 +12,7 @@ A simple splashscreen for [Nobara Linux](https://nobaraproject.org/).
 <br/>
 
 ## To Install:
-Download the tar archive [here](https://github.com/JiayuanWen/nobara-kde-splashscreen/releases/latest), save it somewherer convinent. \
+Download the tar archive [here](https://github.com/JiayuanWen/nobara-kde-splashscreen/releases/latest), save it somewhere convinent. \
 \
 Extract the archive with `tar`:
 ``` bash 
