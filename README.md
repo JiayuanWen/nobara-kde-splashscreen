@@ -38,5 +38,5 @@ Alternatively, you can copy the splash screen manually:
 cp -rv ./Nobara.SplashScreen ~/.local/share/plasma/look-and-feel/
 ```
 
-### Credits:
-Forked from Breeze splash screen by KDE VDG Team.
+## Credits:
+Forked from Breeze splash screen by KDE Visual Design Group.
