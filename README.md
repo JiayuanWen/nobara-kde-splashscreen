@@ -12,4 +12,28 @@ A simple splashscreen for [Nobara Linux](https://nobaraproject.org/).
 <br/>
 
 ## To Install:
-TBA
+Download the tar archive [here](https://github.com/JiayuanWen/nobara-kde-splashscreen/releases/latest), save it somewherer convinent. \
+\
+Extract the archive with `tar`:
+``` bash 
+tar -xvf Nobara-Splashscreen.tar
+```
+\
+Go into the extracted folder:
+``` bash
+cd Nobara-SplashScreen/
+```
+\
+To install automatically, run `install` as root:
+``` bash
+sudo ./install
+```
+If `./install` give permission error, give execute permission:
+``` bash
+sudo sh -c 'chmod +x ./install && ./install'
+```
+\
+Alternatively, you can copy the splash screen manually:
+```
+cp -rv ./Nobara.SplashScreen ~/.local/share/plasma/look-and-feel/
+```
