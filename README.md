@@ -41,4 +41,4 @@ cp -rv ./Nobara.SplashScreen ~/.local/share/plasma/look-and-feel/
 <br/>
 
 ## Credits:
-Forked from Breeze splashscreen by KDE Visual Design Group.
+Built on top of Breeze splashscreen by KDE Visual Design Group.
