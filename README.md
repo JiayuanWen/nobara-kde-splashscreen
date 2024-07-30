@@ -6,8 +6,15 @@
 <div align="center">
   
 A simple splashscreen for [Nobara Linux KDE](https://nobaraproject.org/). Nothing fancy, just something to make Nobara Linux feel more official. Feel free to fork to make something fancier. <br/>
-<sub>Note: This splashscreen is not uploaded to KDE Store, thus it cannot be found via settings </sub> 
 </div>
+
+> [!IMPORTANT]
+> The main branch is been worked on for Plasma 6. For Plasma 5 code, see: https://github.com/JiayuanWen/nobara-kde-splashscreen/tree/plasma-5
+
+> [!NOTE]
+> This splashscreen is not uploaded to KDE Store, thus it cannot be found via settings
+
+
 <br/>
 <br/>
 
