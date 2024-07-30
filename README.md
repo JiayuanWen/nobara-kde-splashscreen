@@ -9,7 +9,7 @@ A simple splashscreen for [Nobara Linux KDE](https://nobaraproject.org/). Nothin
 </div>
 
 > [!IMPORTANT]
-> The main branch is been worked on for Plasma 6. For Plasma 5 code, see: https://github.com/JiayuanWen/nobara-kde-splashscreen/tree/plasma-5
+> The main branch is being worked on for Plasma 6. For Plasma 5 code, see: https://github.com/JiayuanWen/nobara-kde-splashscreen/tree/plasma-5
 
 > [!NOTE]
 > This splashscreen is not uploaded to KDE Store, thus it cannot be found via settings
