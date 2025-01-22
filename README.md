@@ -8,11 +8,8 @@
 A splashscreen for [Nobara Linux KDE](https://nobaraproject.org/). Nothing fancy, just something to make Nobara Linux feel more complete. <br/>
 </div>
 
-> [!IMPORTANT]
-> The main branch is developed for Plasma 6. For Plasma 5, see: https://github.com/JiayuanWen/nobara-kde-splashscreen/tree/plasma-5
-
-> [!NOTE]
-> This splashscreen is not uploaded to KDE Store, thus it cannot be found via settings
+> [!WARNING]
+> This splashscreen is developed for KDE Plasma 6. Compatibility with Plasma 5 is untested and should be installed with caution.
 
 
 <br/>
