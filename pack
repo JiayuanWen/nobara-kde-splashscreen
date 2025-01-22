@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Packing script for Nobara splashscreen, used to create tar to be uploaded online for download
+# Version 1.1
+
+source "$PWD/env"
+
 # Check if tar utility exist on system
 if command -v tar &> /dev/null; then
     echo -e "Start packing... \n"
@@ -9,16 +14,18 @@ else
 fi
 
 # Create temp Folder
-mkdir -v ${PWD}/Nobara-SplashScreen
+mkdir -v ${PWD}/${SPLASH_ID}
 
 # Copy splashscreen content to temp folder
-cp -rp "${PWD}/Nobara.SplashScreen" ${PWD}/Nobara-SplashScreen
-cp -vp ${PWD}/install ${PWD}/Nobara-SplashScreen
+cp -rp "${PWD}/${SPLASH_ID}" ${PWD}/packtemp
+cp -vp ${PWD}/install ${PWD}/packtemp
 
 # Archive the folder
-tar -cvf Nobara-Splashscreen.tar Nobara-SplashScreen &&
+tar -cvf ${SPLASH_ID}.tar packtemp &&
 
 # Delete temp Folder
-rm -rf "${PWD}/Nobara-SplashScreen/"
-echo -e "\nPacking complete!"
+rm -rf "${PWD}/packtemp/"
+
+# Complete packing
+echo -e "\nPacking complete! The tar file should be in the project root folder."
 exit 0

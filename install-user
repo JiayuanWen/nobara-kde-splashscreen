@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# Install script for Nobara splashscreen
+# Version 1.0
+
+source "$PWD/env"
+
+# Check if the script is executed with root privileges
+# if [ "$EUID" -ne 0 ]; then
+#     echo "This script must be run as root. Please use sudo or execute as root user."
+#     exit 1
+# fi
+
+
+# Check if user is running KDE Plasma
+echo "Checking system DE..."
+if pgrep -x "ksmserver" > /dev/null; then
+    #echo "System runs KDE Plasma."
+    true
+else
+    echo "System is not running KDE Plasma. Skip install."
+    exit 1
+fi
+echo ""
+
+
+# Check if Plasma Appearance folder exists
+FOLDER_PATH="/home/$(logname)/.local/share/plasma"
+if [ ! -d "$FOLDER_PATH" ]; then
+    # If the folder does not exist, create it
+    echo "Plamsa appearance folder missing, creating: $FOLDER_PATH"
+    mkdir -p "$FOLDER_PATH"
+    echo "Missing folder created: $FOLDER_PATH"
+    echo ""
+fi
+
+FOLDER_PATH="/home/$(logname)/.local/share/plasma/look-and-feel"
+if [ ! -d "$FOLDER_PATH" ]; then
+    # If the folder does not exist, create it
+    echo "Plamsa look-and-feel folder missing, creating: $FOLDER_PATH"
+    mkdir -p "$FOLDER_PATH"
+    echo "Missing folder created: $FOLDER_PATH"
+    echo ""
+fi
+
+
+# Copy splashscreen folder over
+echo "Copying splashscreen files..."
+FOLDER_PATH="/home/$(logname)/.local/share/plasma/look-and-feel"
+SPLASH_FOLDER="${PWD}/${SPLASH_ID}/"
+if cp -rn "$SPLASH_FOLDER" "$FOLDER_PATH" 2>log_file; then
+    echo -e "\nSplashscreen install successfully."
+    exit 0
+else
+    echo "\nSplashscreen did not install successfully."
+    exit 1
+fi
+
+exit 0

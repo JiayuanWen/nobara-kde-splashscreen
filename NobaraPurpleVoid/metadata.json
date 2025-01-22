@@ -1,30 +1,28 @@
 {
+    "KPackageStructure": "Plasma/LookAndFeel",
     "KPlugin": {
         "Authors": [
             {
                 "Email": "weldonwen@proton.me",
-                "Name": "Jiayuan Weldon Wen",
+                "Name": "Jiayuan Wen",
                 "Name[ja]": "温嘉源",
                 "Name[zh_CN]": "温嘉元",
                 "Name[zh_TW]": "温嘉元"
             }
         ],
         "Category": "",
-        "Description": "Simple splashscreen for Glorious Eggroll's Nobara Linux",
+        "Description": "For Glorious Eggroll's Nobara Linux",
         "Description[ja]": "Nobara Linux用の起動画面",
         "Description[zh_CN]": "为 Nobara Linux 制作的启动屏幕",
         "Description[zh_TW]": "為 Nobara Linux 製作的啟動畫面",
-        "Id": "Nobara.SplashScreen",
-        "License": "GPLv2+",
-        "Name": "Nobara",
+        "Id": "NobaraPurpleVoid",
+        "License": "GPLv3",
+        "Name": "Nobara Purple Void",
         "Name[ja]": "野薔薇",
         "Name[zh_CN]": "野玫瑰",
         "Name[zh_TW]": "野玫瑰",
-        "ServiceTypes": [
-            "Plasma/LookAndFeel"
-        ],
-        "Version": "1.0",
-        "Website": "tba"
+        "Version": "2.0",
+        "Website": "https://github.com/JiayuanWen/nobara-kde-splashscreen"
     },
     "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
     "Keywords[ar]": "سطح المكتب;مساحة العمل;المظهر;المظهر والإحساس;اخرج;Lock;علق;أطفئ;أسبت;",
@@ -73,7 +71,6 @@
     "Keywords[vi]": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;Bàn làm việc;Không gian làm việc;Diện mạo;Nhìn và Cảm;Đăng xuất;Khoá;Tạm ngừng;Tắt;Ngủ đông;",
     "Keywords[x-test]": "xxDesktopxx;xxWorkspacexx;xxAppearancexx;xxLook and Feelxx;xxLogoutxx;xxLockxx;xxSuspendxx;xxShutdownxx;xxHibernatexx;",
     "Keywords[zh_CN]": "桌面;工作空间;外观;观感;注销;锁定;待机;关机;休眠;",
-    "Keywords[zh_TW]": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
-    "X-Plasma-APIVersion": "2",
-    "X-Plasma-MainScript": "defaults"
+    "Keywords[zh_TW]": "桌面;工作空間;外觀;觀感;註銷;中心;待機;關機;預覽;",
+    "X-Plasma-APIVersion": "2"
 }

@@ -1,15 +1,15 @@
-<h1 align="center">Splashscreen for Nobara KDE</h1>
+<h1 align="center">Nobara Purple Void</h1>
 <div align="center">
-  <img src="https://raw.githubusercontent.com/JiayuanWen/nobara-kde-splashscreen/main/Nobara.SplashScreen/contents/previews/splash.png"/>
+  <img src="./NobaraPurpleVoid/contents/previews/splash.gif"/>
 </div>
 
 <div align="center">
   
-A simple splashscreen for [Nobara Linux KDE](https://nobaraproject.org/). Nothing fancy, just something to make Nobara Linux feel more official. Feel free to fork to make something fancier. <br/>
+A splashscreen for [Nobara Linux KDE](https://nobaraproject.org/). Nothing fancy, just something to make Nobara Linux feel more complete. <br/>
 </div>
 
 > [!IMPORTANT]
-> The main branch is being worked on for Plasma 6. For Plasma 5 code, see: https://github.com/JiayuanWen/nobara-kde-splashscreen/tree/plasma-5
+> The main branch is developed for Plasma 6. For Plasma 5, see: https://github.com/JiayuanWen/nobara-kde-splashscreen/tree/plasma-5
 
 > [!NOTE]
 > This splashscreen is not uploaded to KDE Store, thus it cannot be found via settings
@@ -18,32 +18,46 @@ A simple splashscreen for [Nobara Linux KDE](https://nobaraproject.org/). Nothin
 <br/>
 <br/>
 
+## (For dev) To Preview:
+
+<small>Note: You will have to be using KDE Plasma to be able to preview the splashscreen during development.</small>
+
+
+
+To preview/test the splashscreen, first give the `./preview` script permission to execute:
+```bash
+sudo chmod +x ./preview
+```
+
+After granting permission, run the script to start the preview:
+```bash
+./preview
+```
+<br>
+
+
 ## To Install:
-Download the tar archive [here](https://github.com/JiayuanWen/nobara-kde-splashscreen/releases/latest), save it somewhere convinent. \
-\
-Extract the archive with `tar`:
+
+Clone this repository:
 ``` bash 
-tar -xvf Nobara-Splashscreen.tar
+tar -xvf NobaraPurpleCycle.tar
 ```
 \
 Go into the extracted folder:
 ``` bash
-cd Nobara-SplashScreen/
+cd NobaraPurpleCycle/
 ```
 \
-To install automatically, run `install` as root:
-``` bash
-sudo ./install
-```
-If `./install` give permission error, give execute permission:
-``` bash
-sudo sh -c 'chmod +x ./install && ./install'
-```
-\
-Alternatively, you can copy the splashscreen manually:
-```
-cp -rv ./Nobara.SplashScreen ~/.local/share/plasma/look-and-feel/
-```
+To install:
+* Install for current user (accessible to you only):
+  ``` bash
+  sudo chmod +x ./install-user && ./install-user
+  ````
+* Install for entire system (everyone can use it):
+  ``` bash
+  sudo sh -c 'chmod +x ./install-system && ./install-system'
+  ````
+
 <br/>
 <br/>
 

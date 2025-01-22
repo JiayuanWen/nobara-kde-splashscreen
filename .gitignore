@@ -1,0 +1,8 @@
+# Log file from scripts 
+log_file
+
+# Krita backup files
+*.kra~
+
+# Video resources (too large to include)
+contentsrc/*
