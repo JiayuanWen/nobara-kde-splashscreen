@@ -37,7 +37,7 @@ After granting permission, run the script to start the preview:
 
 Clone this repository:
 ``` bash 
-git clone https://github.com/JiayuanWen/nobara-kde-splashscreen.git
+git clone https://github.com/JiayuanWen/nobara-purple-void.git
 ```
 \
 Go into the cloned folder:
