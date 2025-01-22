@@ -1,6 +1,6 @@
 <h1 align="center">Nobara Purple Void</h1>
 <div align="center">
-  <img src="./NobaraPurpleVoid/contents/previews/splash.gif"/>
+  <img src="./readmesrc/splash.gif"/>
 </div>
 
 <div align="center">

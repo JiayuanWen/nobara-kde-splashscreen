@@ -3,9 +3,9 @@
 # Packing script for Nobara splashscreen, used to create tar to be uploaded online for download
 # Version 1.1
 
-source "$PWD/env"
+# Execute as is to pack the splashscreen and install scripts together, execute with `--open-desktop` option to pack only the splashscreen (useful for uploading to KDE Store).
 
-FILE_POSTFIX="_by_${SPLASH_AUTHOR}"
+source "$PWD/env"
 
 # Check if tar utility exist on system
 if command -v tar &> /dev/null; then
@@ -17,17 +17,25 @@ fi
 
 # Create temp Folder
 mkdir -v ${PWD}/packtemp
-mkdir -v ${PWD}/packtemp/${SPLASH_ID}${FILE_POSTFIX}
-PACK_TEM=${PWD}/packtemp/${SPLASH_ID}${FILE_POSTFIX}
+mkdir -v ${PWD}/packtemp/${SPLASH_ID}
+PACK_TEM=${PWD}/packtemp/${SPLASH_ID}
 
 # Copy splashscreen content to temp folder
 cp -rp ${PWD}/${SPLASH_ID} ${PACK_TEM}
-cp -vp ${PWD}/install-user ${PACK_TEM}
-cp -vp ${PWD}/install-system ${PACK_TEM}
-cp -vp ${PWD}/env ${PACK_TEM}
+if [ "$1" == "--open-desktop" ]; then
+    echo "Packing for open-desktop, excluding installation scripts."
+else
+    cp -vp ${PWD}/install-user ${PACK_TEM}
+    cp -vp ${PWD}/install-system ${PACK_TEM}
+    cp -vp ${PWD}/env ${PACK_TEM}
+fi
 
 # Archive the folder
-tar -C ${PWD}/packtemp -czvf ${SPLASH_ID}${FILE_POSTFIX}.tar.gz ${SPLASH_ID}${FILE_POSTFIX} &&
+if [ "$1" == "--open-desktop" ]; then
+    tar -C ${PWD}/packtemp/${SPLASH_ID} -czvf ${SPLASH_ID}.tar.gz ${SPLASH_ID} 
+else
+    tar -C ${PWD}/packtemp -czvf ${SPLASH_ID}.tar.gz ${SPLASH_ID} 
+fi
 
 # Delete temp Folder
 rm -rf ${PWD}/packtemp

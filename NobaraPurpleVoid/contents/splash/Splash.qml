@@ -40,7 +40,6 @@ Rectangle {
             sourceSize.height: size
             //sourceSize.width: size
             anchors.centerIn: parent
-            opacity: 0 // Make it invisible since it is to be seen at end of splash, not beginning
             paused: false
             smooth: true
             visible: true
@@ -54,21 +53,19 @@ Rectangle {
             sourceSize.height: size
             sourceSize.width: size
             anchors.centerIn: parent
-            opacity: 1
             paused: false
             smooth: true
             visible: true
     }
 
-    // Tribute (Distro author tribute at bottom, id: subtitle)
+    // Credit (Distro author credit at bottom, id: subtitle)
     Image {
         readonly property real size: Kirigami.Units.gridUnit * 12
 
-        id: tribute
-        source: "images/tribute.png"
+        id: credit
+        source: "images/credit.png"
         anchors.horizontalCenter: parent.horizontalCenter
         y: (parent.height - height) / 1.1
-        opacity: 0 // Make it invisible for it is to be seen at end of splash
         sourceSize.width: size
         visible: true
     }
@@ -84,14 +81,36 @@ Rectangle {
     // Functions
     // ------------------------
 
-    // Function for changing opacity (transparency) on the fly
+    // Animation function for changing logo opacity
     OpacityAnimator {
-        id: fadeAnimation
+        id: logoOpacity
         running: false
-        target: null_
+        target: logo
         from: 0
         to: 1
-        duration: 1000
+        duration: 300
+        easing.type: Easing.InOutQuad
+    }
+
+    // Animation function for changing logo (end version) opacity
+    OpacityAnimator {
+        id: logoEndOpacity
+        running: false
+        target: logoEnd
+        from: 0
+        to: 1
+        duration: 300
+        easing.type: Easing.InOutQuad
+    }
+
+    // Animation function for changing credit opacity
+    OpacityAnimator {
+        id: creditOpacity
+        running: false
+        target: credit
+        from: 0
+        to: 1
+        duration: 300
         easing.type: Easing.InOutQuad
     }
 
@@ -103,39 +122,40 @@ Rectangle {
     onStageChanged: {
         if (stage == 1) {
             // Make main logo show on start of stage 1
-            logo.opacity = 1;
-            fadeAnimation.target = logo;
-            fadeAnimation.from = 0;
-            fadeAnimation.to = 1;
-            fadeAnimation.running = true;
+            logoOpacity.running = true;
+
+            // Hide end version of logo and credit on start since they are ment for the last stage
+            logoEndOpacity.from = 0;
+            logoEndOpacity.to = 0;
+            logoEndOpacity.duration = 1;
+            logoEndOpacity.running = true;
+
+            creditOpacity.from = 0;
+            creditOpacity.to = 0;
+            creditOpacity.duration = 1;
+            creditOpacity.running = true;
 
         } else if (stage == 5) {
 
             // Make main logo hide
-            fadeAnimation.target = logo;
-            fadeAnimation.duration = 300;
-            fadeAnimation.from = 1;
-            fadeAnimation.to = 0;
-            fadeAnimation.running = true;
+            logoOpacity.from = 1;
+            logoOpacity.to = 0;
+            logoOpacity.running = true;
 
-            // Make the end version of logo show
-            logoEnd.opacity = 1;
+            // Make end version logo show
+            logoEndOpacity.duration = 100;
+            logoEndOpacity.from = 0;
+            logoEndOpacity.to = 1;
             // A hacky way to restart the gif animation sequence (set source to something else then switch back to actual source)
             logoEnd.source = "images/tem.gif"
             logoEnd.source = "images/logo-end.gif"
-            fadeAnimation.target = logoEnd;
-            fadeAnimation.duration = 100;
-            fadeAnimation.from = 0;
-            fadeAnimation.to = 1;
-            fadeAnimation.running = true;
+            logoEndOpacity.running = true;
 
-            // Make tribute show as well
-            tribute.opacity = 0.30;
-            fadeAnimation.target = tribute;
-            fadeAnimation.duration = 500;
-            fadeAnimation.from = 0;
-            fadeAnimation.to = 1;
-            fadeAnimation.running = true;
+            // Make credit show as well
+            creditOpacity.duration = 500;
+            creditOpacity.from = 0;
+            creditOpacity.to = 0;
+            creditOpacity.running = true;
         }
     }
 }
