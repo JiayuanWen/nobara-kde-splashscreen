@@ -125,17 +125,17 @@ Rectangle {
             logoOpacity.running = true;
 
             // Hide end version of logo and credit on start since they are ment for the last stage
-            logoEndOpacity.from = 0;
+            logoEndOpacity.from = 0.1;
             logoEndOpacity.to = 0;
             logoEndOpacity.duration = 1;
             logoEndOpacity.running = true;
 
-            creditOpacity.from = 0;
+            creditOpacity.from = 0.1;
             creditOpacity.to = 0;
             creditOpacity.duration = 1;
             creditOpacity.running = true;
 
-        } else if (stage == 5) {
+        } else if (stage == 6) {
 
             // Make main logo hide
             logoOpacity.from = 1;
