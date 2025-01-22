@@ -6,3 +6,7 @@ log_file
 
 # Video resources (too large to include)
 contentsrc/*
+
+# Packaged files
+*.tar
+*.tar.gz

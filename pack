@@ -5,6 +5,8 @@
 
 source "$PWD/env"
 
+FILE_POSTFIX="_by_${SPLASH_AUTHOR}"
+
 # Check if tar utility exist on system
 if command -v tar &> /dev/null; then
     echo -e "Start packing... \n"
@@ -14,17 +16,21 @@ else
 fi
 
 # Create temp Folder
-mkdir -v ${PWD}/${SPLASH_ID}
+mkdir -v ${PWD}/packtemp
+mkdir -v ${PWD}/packtemp/${SPLASH_ID}${FILE_POSTFIX}
+PACK_TEM=${PWD}/packtemp/${SPLASH_ID}${FILE_POSTFIX}
 
 # Copy splashscreen content to temp folder
-cp -rp "${PWD}/${SPLASH_ID}" ${PWD}/packtemp
-cp -vp ${PWD}/install ${PWD}/packtemp
+cp -rp ${PWD}/${SPLASH_ID} ${PACK_TEM}
+cp -vp ${PWD}/install-user ${PACK_TEM}
+cp -vp ${PWD}/install-system ${PACK_TEM}
+cp -vp ${PWD}/env ${PACK_TEM}
 
 # Archive the folder
-tar -cvf ${SPLASH_ID}.tar packtemp &&
+tar -C ${PWD}/packtemp -czvf ${SPLASH_ID}${FILE_POSTFIX}.tar.gz ${SPLASH_ID}${FILE_POSTFIX} &&
 
 # Delete temp Folder
-rm -rf "${PWD}/packtemp/"
+rm -rf ${PWD}/packtemp
 
 # Complete packing
 echo -e "\nPacking complete! The tar file should be in the project root folder."
