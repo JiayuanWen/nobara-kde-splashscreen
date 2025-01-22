@@ -37,12 +37,12 @@ After granting permission, run the script to start the preview:
 
 Clone this repository:
 ``` bash 
-tar -xvf NobaraPurpleCycle.tar
+git clone https://github.com/JiayuanWen/nobara-kde-splashscreen.git
 ```
 \
-Go into the extracted folder:
+Go into the cloned folder:
 ``` bash
-cd NobaraPurpleCycle/
+cd NobaraPurpleVoid/
 ```
 \
 To install:
