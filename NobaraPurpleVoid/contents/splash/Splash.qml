@@ -26,6 +26,7 @@ Rectangle {
     color: "#000000"
 
     property int stage
+    property var showEndLogo: false // Change this value to turn the end "Nobara" logo on/off
 
     // ------------------------
     // Components
@@ -137,19 +138,21 @@ Rectangle {
 
         } else if (stage == 6) {
 
-            // Make main logo hide
-            logoOpacity.from = 1;
-            logoOpacity.to = 0;
-            logoOpacity.running = true;
+            if (showEndLogo == true) {
+                // Make main logo hide
+                logoOpacity.from = 1;
+                logoOpacity.to = 0;
+                logoOpacity.running = true;
 
-            // Make end version logo show
-            logoEndOpacity.duration = 100;
-            logoEndOpacity.from = 0;
-            logoEndOpacity.to = 1;
-            // A hacky way to restart the gif animation sequence (set source to something else then switch back to actual source)
-            logoEnd.source = "images/tem.gif"
-            logoEnd.source = "images/logo-end.gif"
-            logoEndOpacity.running = true;
+                // Make end version logo show
+                logoEndOpacity.duration = 100;
+                logoEndOpacity.from = 0;
+                logoEndOpacity.to = 1;
+                //A hacky way to restart the gif animation sequence (set source to something else then switch back to actual source)
+                logoEnd.source = "images/tem.gif"
+                logoEnd.source = "images/logo-end.gif"
+                logoEndOpacity.running = true;
+            }
 
             // Make credit show as well
             creditOpacity.duration = 500;

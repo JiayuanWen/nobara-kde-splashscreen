@@ -4,9 +4,12 @@ log_file
 # Krita backup files
 *.kra~
 
-# Video resources (too large to include)
+# Video resources
 contentsrc/*
 
 # Packaged files
 *.tar
 *.tar.gz
+
+# Desired ignore files
+*.ignore

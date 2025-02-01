@@ -3,8 +3,8 @@
     "KPlugin": {
         "Authors": [
             {
-                "Email": "weldonwen@proton.me",
-                "Name": "Jiayuan Wen",
+                "Email": "wylfredwen@proton.me",
+                "Name": "Wylfred Wen",
                 "Name[ja]": "温嘉源",
                 "Name[zh_CN]": "温嘉元",
                 "Name[zh_TW]": "温嘉元"
@@ -18,11 +18,11 @@
         "Id": "NobaraPurpleVoid",
         "License": "GPLv3",
         "Name": "Nobara Purple Void",
-        "Name[ja]": "野薔薇",
-        "Name[zh_CN]": "野玫瑰",
-        "Name[zh_TW]": "野玫瑰",
-        "Version": "2.0",
-        "Website": "https://github.com/JiayuanWen/nobara-kde-splashscreen"
+        "Name[ja]": "濃い紫野薔薇",
+        "Name[zh_CN]": "深紫野玫瑰",
+        "Name[zh_TW]": "深紫野玫瑰",
+        "Version": "2.1",
+        "Website": "https://github.com/JiayuanWen/nobara-purple-void"
     },
     "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
     "Keywords[ar]": "سطح المكتب;مساحة العمل;المظهر;المظهر والإحساس;اخرج;Lock;علق;أطفئ;أسبت;",
