@@ -44,8 +44,9 @@ fi
 # Copy splashscreen folder over
 echo "Copying splashscreen preview files..."
 FOLDER_PATH="/home/$(logname)/.local/share/plasma/look-and-feel"
-SPLASH_FOLDER="${PWD}/${SPLASH_ID}/"
-if cp -rn "$SPLASH_FOLDER" "$FOLDER_PATH" 2>log_file; then
+SPLASH_FOLDER_PRE="${PWD}/${SPLASH_ID}/"
+SPLASH_FOLDER="${PWD}/${SPLASH_ID}_PREVIEW/"
+if cp -rn "$SPLASH_FOLDER_PRE" "$SPLASH_FOLDER" 2>log_file && cp -rn "$SPLASH_FOLDER" "$FOLDER_PATH" 2>log_file; then
     echo -e "\nSplashscreen install successfully."
 else
     echo "\nSplashscreen did not install successfully."
@@ -55,12 +56,14 @@ echo ""
 
 # Start preview
 echo "Starting preview... "
-ksplashqml --test --window "${SPLASH_ID}/" &&
+ksplashqml --test --window "${SPLASH_ID}_PREVIEW/" &&
 echo ""
 
 # Remove 
 echo "Preview ended. Removing preview files..."
-FOLDER_PATH="/home/$(logname)/.local/share/plasma/look-and-feel/${SPLASH_ID}"
+FOLDER_PATH="/home/$(logname)/.local/share/plasma/look-and-feel/${SPLASH_ID}_PREVIEW"
+SPLASH_FOLDER="${PWD}/${SPLASH_ID}_PREVIEW/"
 rm -rf "$FOLDER_PATH"
+rm -rf "$SPLASH_FOLDER"
 
 exit 0
