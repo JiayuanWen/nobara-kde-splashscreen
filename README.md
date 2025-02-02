@@ -15,23 +15,6 @@ A splashscreen for [Nobara Linux KDE](https://nobaraproject.org/). Nothing fancy
 <br/>
 <br/>
 
-## (For dev) To Preview:
-
-<small>Note: You will have to be using KDE Plasma to be able to preview the splashscreen during development.</small>
-
-
-
-To preview/test the splashscreen, first give the `./preview` script permission to execute:
-```bash
-sudo chmod +x ./preview
-```
-
-After granting permission, run the script to start the preview:
-```bash
-./preview
-```
-<br>
-
 
 ## To Install:
 
@@ -56,6 +39,23 @@ To install:
   ````
 
 <br/>
+
+## (For dev) To Preview:
+
+<small>Note: You will have to be using KDE Plasma to be able to preview the splashscreen during development.</small>
+
+
+
+To preview/test the splashscreen, first give the `./preview` script permission to execute:
+```bash
+sudo chmod +x ./preview
+```
+
+After granting permission, run the script to start the preview:
+```bash
+./preview
+```
+<br>
 <br/>
 
 ## Credits:
