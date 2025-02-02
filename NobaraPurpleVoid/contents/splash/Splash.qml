@@ -25,26 +25,21 @@ Rectangle {
     id: root
     color: "#000000"
 
+    // Stage variable, can be used to control elements mid-run (such as loading bar). 
+    // Values: integer 1 to 6 (there are total of 6 stages), assigned automatically by Plasma during startup.
+    // See "Sequence control" section for usage.
     property int stage
-    property var showEndLogo: false // Change this value to turn the end "Nobara" logo on/off
+
+    // ------------------------
+    // Variables
+    // ------------------------
+
+    property var indicatorBaseOpacity: 0.5 // Change this value to adjust progress indicator opacity
 
     // ------------------------
     // Components
     // ------------------------
 
-    // Center logo end version ("Nobara" that appears at the end of loading, id: logoEnd)
-    AnimatedImage {
-            readonly property real size: Kirigami.Units.gridUnit * 8
-
-            id: logoEnd
-            source: "images/logo-end.gif"
-            sourceSize.height: size
-            //sourceSize.width: size
-            anchors.centerIn: parent
-            paused: false
-            smooth: true
-            visible: true
-    }
     // Center logo (id: logo)
     AnimatedImage {
             readonly property real size: Kirigami.Units.gridUnit * 8
@@ -59,24 +54,18 @@ Rectangle {
             visible: true
     }
 
-    // Credit (Distro author credit at bottom, id: subtitle)
+    // Progress indicator at the bottom (id: indicator)
     Image {
         readonly property real size: Kirigami.Units.gridUnit * 12
 
-        id: credit
-        source: "images/credit.png"
+        id: indicator
+        source: "images/tem.gif"
         anchors.horizontalCenter: parent.horizontalCenter
         y: (parent.height - height) / 1.1
         sourceSize.width: size
         visible: true
+        opacity: indicatorBaseOpacity
     }
-
-    // Item {
-    //     id: content
-    //     anchors.fill: parent
-    //     opacity: 1
-    //
-    // }
 
     // ------------------------
     // Functions
@@ -93,22 +82,11 @@ Rectangle {
         easing.type: Easing.InOutQuad
     }
 
-    // Animation function for changing logo (end version) opacity
-    OpacityAnimator {
-        id: logoEndOpacity
-        running: false
-        target: logoEnd
-        from: 0
-        to: 1
-        duration: 300
-        easing.type: Easing.InOutQuad
-    }
-
     // Animation function for changing credit opacity
     OpacityAnimator {
-        id: creditOpacity
+        id: indicatorOpacity
         running: false
-        target: credit
+        target: indicator
         from: 0
         to: 1
         duration: 300
@@ -122,43 +100,39 @@ Rectangle {
     // For changing properties on loading stage change
     onStageChanged: {
         if (stage == 1) {
-            // Make main logo show on start of stage 1
+            // Make logo show on start of stage 1
             logoOpacity.running = true;
 
-            // Hide end version of logo and credit on start since they are ment for the last stage
-            logoEndOpacity.from = 0.1;
-            logoEndOpacity.to = 0;
-            logoEndOpacity.duration = 1;
-            logoEndOpacity.running = true;
+            // Set loading indicator stage to 1
+            indicator.source = "images/loading-1.png";
 
-            creditOpacity.from = 0.1;
-            creditOpacity.to = 0;
-            creditOpacity.duration = 1;
-            creditOpacity.running = true;
+        } else if (stage == 2) {
+            // Set loading indicator stage to 1
+            indicator.source = "images/loading-1.png";
+
+        } else if (stage == 3) {
+            // Set loading indicator stage to 2
+            indicator.source = "images/loading-2.png";
+
+        } else if (stage == 4) {
+            // Set loading indicator stage to 3
+            indicator.source = "images/loading-3.png";
+
+        } else if (stage == 5) {
+            // Set loading indicator stage to 4
+            indicator.source = "images/loading-4.png";
 
         } else if (stage == 6) {
+            // Set loading indicator stage to 5
+            indicator.source = "images/loading-5.png";
 
-            if (showEndLogo == true) {
-                // Make main logo hide
-                logoOpacity.from = 1;
-                logoOpacity.to = 0;
-                logoOpacity.running = true;
 
-                // Make end version logo show
-                logoEndOpacity.duration = 100;
-                logoEndOpacity.from = 0;
-                logoEndOpacity.to = 1;
-                //A hacky way to restart the gif animation sequence (set source to something else then switch back to actual source)
-                logoEnd.source = "images/tem.gif"
-                logoEnd.source = "images/logo-end.gif"
-                logoEndOpacity.running = true;
-            }
-
-            // Make credit show as well
-            creditOpacity.duration = 500;
-            creditOpacity.from = 0;
-            creditOpacity.to = 0;
-            creditOpacity.running = true;
+            // Hide indicator on last stage
+            indicatorOpacity.duration = 1000;
+            indicatorOpacity.from = indicatorBaseOpacity;
+            indicatorOpacity.to = 0;
+            indicatorOpacity.running = true;
+            
         }
     }
 }
